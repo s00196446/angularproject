@@ -1,0 +1,17 @@
+<h2 *ngIf="message">{{message}}</h2>
+
+<button (click)="openAddPokemon()" *ngIf="!showPokemonForm" 
+  class="btn btn-lg btn-outline-primary">Add Pokemon</button>
+
+  <app-sample-form ></app-sample-form>
+    
+
+ 
+<app-pokemon-row *ngFor="let b of pokemonList"
+[pokemon]="b"
+(click)='clicked(b)'></app-pokemon-row>
+
+
+<app-pokemon-details *ngIf="currentPokemon!" [pokemon]="currentPokemon">
+
+</app-pokemon-details>   
