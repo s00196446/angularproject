@@ -41,10 +41,6 @@ export class SampleFormComponent implements OnInit {
     })
   }
 
-  closeForm(){
-    
-  }
-
   get Name() {
     return this.pokemonForm.get('Name');
   }

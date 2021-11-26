@@ -14,14 +14,14 @@ export class PokemonListComponent implements OnInit {
   showPokemonForm: boolean = false;
 
   currentPokemon? : Pokemon = undefined;
+
+  openAddPokemon():void{
+    this.currentPokemon = undefined;
+    this.showPokemonForm = true;
+  }
   
   clicked(pokemon:Pokemon): void{
     this.currentPokemon = pokemon;
-  }
-
-  openAddPokemon(): void {
-    this.currentPokemon = undefined;
-    this.showPokemonForm = true;
   }
 
   pokemonFormClose(pokemon?: Pokemon): void {
@@ -35,6 +35,8 @@ export class PokemonListComponent implements OnInit {
       this.addNewPokemon(pokemon);
     }
   }
+
+  
 
   addNewPokemon(newPokemon: Pokemon): void {
     console.log('adding new pokemon ' + JSON.stringify(newPokemon));

@@ -1,40 +1,41 @@
-<form [formGroup]="pokemonForm" (ngSubmit) = "onSubmit()" class>
+<form [formGroup]="pokemonForm" (ngSubmit)="onSubmit()" class>
 
-    <button type="button" class="btn-close" aria-label="close"
-    ></button>
+    <!-- <button type="button" class="btn-close" aria-label="close"
+    ></button> -->
 
-    
-    <div class="mb-3">
-    <label for="Name" class="form-label"> Name</label>
-    <input id="Name" type="text" formControlName="Name" class="form-control">
-    </div>
-    <div>
-        <label for="Generation"> Generation </label>
-        <input id="Generation" type="text" formControlName="Generation">
-    </div>
-    <div>
-        <label for="Type"> Type </label>
-        <input id="Type" type="text" formControlName="Type">
-    </div>
-    <div>
-        <label for="PokedexNo"> Pokedex No </label>
-        <input id="PokedexNo" type="text" formControlName="PokedexNo">
-    </div>
-    
-    <button [disabled]="!pokemonForm.valid" type="submit" >Submit</button>
 
-    <div *ngIf="Name?.invalid && Name?.touched"  class="alert alert-danger" >
+    <div class="form-group">
+        <label for="Name" class="form-control"> Name</label>
+        <input id="Name" type="text" formControlName="Name" class="form-control">
+
+        <div>
+            <label for="Generation"class="form-control"> Generation </label>
+            <input id="Generation" type="text" formControlName="Generation"class="form-control">
+        </div>
+        <div>
+            <label for="Type"class="form-control"> Type </label>
+            <input id="Type" type="text" formControlName="Type"class="form-control">
+        </div>
+        <div>
+            <label for="PokedexNo"class="form-control"> Pokedex No </label>
+            <input id="PokedexNo" type="text" formControlName="PokedexNo"class="form-control">
+        </div>
+
+    </div>
+
+    <button [disabled]="!pokemonForm.valid" type="submit" class="btn btn-primary">Submit</button>
+
+    <div *ngIf="Name?.invalid && Name?.touched" class="alert alert-danger">
         You must include a Name
     </div>
-    <div *ngIf="Generation?.invalid && Generation?.touched"  class="alert alert-danger" >
+    <div *ngIf="Generation?.invalid && Generation?.touched" class="alert alert-danger">
         You Must Include A Generation
     </div>
-    <div *ngIf="Type?.invalid && Type?.touched"  class="alert alert-danger" >
+    <div *ngIf="Type?.invalid && Type?.touched" class="alert alert-danger">
         You Must Include A Type
     </div>
-    <div *ngIf="PokedexNo?.invalid && PokedexNo?.touched"  class="alert alert-danger" >
+    <div *ngIf="PokedexNo?.invalid && PokedexNo?.touched" class="alert alert-danger">
         You Must Include A Pokedex Number
     </div>
-    
-    </form>
-    
+
+</form>
